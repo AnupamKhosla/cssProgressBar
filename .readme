@@ -1,0 +1,6 @@
+# cssProgressBar  
+
+
+## Smart Fake progress bar 
+---------------------------------
+Deludes the user into beleiving that it shows exactly how much of web page has been loaded. In reality it alwasy load upto 95% and then stops untill domContentLoaded is fired.
