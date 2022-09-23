@@ -1,6 +1,5 @@
 'use strict';
 
-
 !function(){
 	// on dom content loaded
 	document.addEventListener("DOMContentLoaded", function(event) {	
@@ -30,10 +29,11 @@
 				}
 			}, time/6); //50ms interval for .3second delay
 		});
-		var loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart; 
-	    console.log('Page load time is '+ loadTime);
-	    // add text to h2.timeDom
-	    document.querySelector('h2.timeDom').textContent = 'DOM Content Loaded in ' + loadTime + 'ms';
 
+        //get page laod time
+		var timeLoad = performance.timing;
+		let pageloadtime = timeLoad.domContentLoadedEventStart - timeLoad.navigationStart;		 
+	    pageloadtime = pageloadtime/1000; //seconds
+	    document.querySelector('h2.timeDom').textContent = 'DOM Content Loaded in ' + pageloadtime + 'seconds';
 	});
 }();
